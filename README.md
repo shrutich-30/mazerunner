@@ -1,27 +1,29 @@
-# 🎮 Maze Runner 3D – Multiplayer Web Game
+# Maze Runner 3D | Multiplayer
 
-## 🧾 Description
-A real-time multiplayer 3D maze game built using modern web technologies. Players can join or create rooms, navigate through procedurally generated mazes, and race against others to reach the exit first. The game uses WebSockets for seamless real-time communication between the frontend and backend.
+A real-time 3D maze racing game built with Python (Backend) and Three.js (Frontend).
 
----
+## Features
+- **Deterministic Mazes**: Generated from a seed shared between server and all clients.
+- **Room System**: Create private rooms with codes for 2-8 players.
+- **60Hz Sync**: Smooth authoritative movement with client-side interpolation.
+- **Premium Aesthetics**: Cyberpunk/Neon design with glassmorphism UI.
 
-##  Features
--  Real-time multiplayer gameplay  
--  Procedurally generated 3D maze  
--  WebSocket-based communication  
--  Room creation & join via code  
--  Live leaderboard & race system  
--  Smooth player movement with interpolation  
--  Modern UI with Three.js rendering  
+## Setup
 
----
+1. **Install Dependencies**:
+   ```bash
+   pip install websockets
+   ```
 
-## 🛠️ Tech Stack
+2. **Run Server**:
+   ```bash
+   cd backend
+   python server.py
+   ```
 
-### Frontend:
-- HTML, CSS, JavaScript  
-- Three.js  
+3. **Run Frontend**:
+   Open `frontend/index.html` via a local server (e.g., `python -m http.server 8000`).
 
-### Backend:
-- Python  
-- WebSockets (`websockets` library)
+## Controls
+- **WASD / Arrows**: Move player.
+- **Goal**: Reach the pink exit marker first to win.

@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Backend (Python)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/server.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run Frontend (Server)",
+            "type": "python",
+            "request": "launch",
+            "module": "http.server",
+            "args": [
+                "8000",
+                "-d",
+                "frontend"
+            ],
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch Full Game",
+            "configurations": [
+                "Run Backend (Python)",
+                "Run Frontend (Server)"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Runner 3D | Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="ui-container">
+        <!-- Lobby -->
+        <div id="lobby" class="screen">
+            <div class="glass-container">
+                <h1 class="logo">NEON<span>MAZE</span></h1>
+                <p class="subtitle">Multiplayer 3D Race</p>
+                <div class="input-section">
+                    <input type="text" id="username" placeholder="Enter Your Name..." maxlength="12">
+                    <button id="btn-play">ENTER GALAXY</button>
+                    <p class="small-text">Matchmaking or creating room automatically</p>
+                    <div class="divider">OR JOIN WITH CODE</div>
+                    <div class="join-group">
+                        <input type="text" id="room-code" placeholder="CODE" maxlength="6">
+                        <button id="btn-join">JOIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Lobby -->
+        <div id="room-lobby" class="screen hidden">
+            <div class="glass-container">
+                <h2 id="display-room-code">WAITING FOR PLAYERS</h2>
+                <div id="countdown-timer" class="hidden">Starting in 5...</div>
+                <div class="player-list">
+                    <ul id="players-ul"></ul>
+                </div>
+                <p id="room-id-tag">CODE: ######</p>
+            </div>
+        </div>
+
+        <!-- Game HUD -->
+        <div id="hud" class="hidden">
+            <div class="top-bar">
+                <div id="timer">00:00</div>
+                <div id="room-code-hud">CODE: ######</div>
+            </div>
+            <div id="leaderboard"></div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen hidden">
+            <div class="glass-container">
+                <h1 id="winner-announce">PLAYER WON!</h1>
+                <button onclick="location.reload()">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="game-canvas"></canvas>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
